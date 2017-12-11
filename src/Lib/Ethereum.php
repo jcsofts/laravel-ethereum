@@ -388,4 +388,12 @@ class Ethereum extends JsonRPC
     {
         return $this->ether_request(__FUNCTION__, array($id));
     }
+
+    function personal_newAccount($password){
+        return $this->ether_request(__FUNCTION__, array($password));
+    }
+
+    function personal_listAccounts(){
+        return $this->ether_request(__FUNCTION__);
+    }
 }
