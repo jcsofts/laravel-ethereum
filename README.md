@@ -27,7 +27,7 @@ Alternatively, add these two lines to your composer require section:
 ```json
 {
     "require": {
-        "jcsofts/laravel-ethereum": "*"
+        "jcsofts/laravel-ethereum": "dev-master"
     }
 }
 ```
