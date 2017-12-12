@@ -389,11 +389,33 @@ class Ethereum extends JsonRPC
         return $this->ether_request(__FUNCTION__, array($id));
     }
 
-    function personal_newAccount($password){
-        return $this->ether_request(__FUNCTION__, array($password));
+    function personal_newAccount($passphrase){
+        return $this->ether_request(__FUNCTION__, array($passphrase));
     }
 
     function personal_listAccounts(){
         return $this->ether_request(__FUNCTION__);
+    }
+
+    function personal_unlockAccount($address,$passphrase,$duration=300){
+        return $this->ether_request(__FUNCTION__, array($address,$passphrase,$duration));
+    }
+
+    function personal_lockAccount($address){
+        return $this->ether_request(__FUNCTION__, array($address));
+    }
+
+    function personal_ecRecover($message, $signature){
+        return $this->ether_request(__FUNCTION__, array($message,$signature));
+    }
+
+    function personal_importRawKey($keydata, $passphrase){
+        return $this->ether_request(__FUNCTION__, array($keydata,$passphrase));
+    }
+
+    function personal_sendTransaction(EthereumTransaction $transaction,$passphrase){
+        $params=$transaction->toArray();
+        array_push($params,$passphrase);
+        return $this->ether_request(__FUNCTION__, $params);
     }
 }

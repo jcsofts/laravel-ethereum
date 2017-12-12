@@ -13,6 +13,8 @@
 
 This is a simple Laravel Service Provider providing for <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">Generic JSON RPC</a>
 
+and <a href="https://github.com/ethereum/go-ethereum/wiki/Management-APIs">Management API</a>
+
 Installation
 ------------
 
